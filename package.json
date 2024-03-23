@@ -1,0 +1,14 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter backend start:dev",
+    "dev:infrastructure": "docker-compose -f docker-compose.dev.yaml up -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

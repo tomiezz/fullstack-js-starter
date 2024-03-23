@@ -1,0 +1,33 @@
+services:
+  postgres:
+    container_name: database-container
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: postgres_db
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: postgres_password
+    networks:
+      - postgres
+    volumes:
+      - docker-postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: database-admin-container
+    image: dpage/pgadmin4:6.18
+    environment:
+      PGADMIN_DEFAULT_EMAIL: default@domain.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    networks:
+      - postgres
+    ports:
+      - "8080:80"
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  docker-postgres:
+    driver: local
