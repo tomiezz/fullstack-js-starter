@@ -1,4 +1,4 @@
-## Fullstack JS web application stater
+## Fullstack JS web application starter
 
 ## Description
 
